@@ -1,6 +1,7 @@
 import React, { useState } from "react"
-import InputGroup from "@/components/InputGroup/InputGroup"
+import axios from "axios"
 import showToast from "@/scripts/showToast"
+import InputGroup from "@/components/InputGroup/InputGroup"
 import "./contact-form.css"
 
 const ContactForm = () => {
@@ -10,19 +11,10 @@ const ContactForm = () => {
     e.preventDefault()
     setIsLoading(true)
     const formData = new FormData(e.target as HTMLFormElement)
-
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        body: formData,
-      })
-      const data = await response.json()
-
-      if (data.message) {
-        showToast(true, data.message)
-      }
+      await axios.post("/api/contact", formData)
+      showToast(true, "Message sent")
     } catch (error) {
-      console.log(error)
       showToast(false, "Something went wrong")
     }
     setIsLoading(false)
