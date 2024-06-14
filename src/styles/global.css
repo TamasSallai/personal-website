@@ -6,14 +6,108 @@
   font-display: swap;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
+:root {
+  --clr-white: #fff;
+  --clr-black: #000;
+
+  --clr-accent-500: #6366f1;
+  --clr-accent-400: #818cf8;
+  --clr-accent-300: #a5b4fc;
+
+  --clr-zinc-900: #18181b;
+  --clr-zinc-800: #27272a;
+  --clr-zinc-700: #3f3f46;
+  --clr-zinc-600: #52525b;
+  --clr-zinc-500: #71717a;
+  --clr-zinc-400: #a1a1aa;
+  --clr-zinc-300: #d4d4d8;
+  --clr-zinc-200: #e4e4e7;
+  --clr-zinc-100: #f4f4f5;
+
+  --clr-slate-900: #0f172a;
+  --clr-slate-800: #1e293b;
+  --clr-slate-700: #334155;
+  --clr-slate-600: #475569;
+  --clr-slate-500: #64748b;
+  --clr-slate-400: #94a3b8;
+  --clr-slate-300: #cbd5e1;
+  --clr-slate-200: #e2e8f0;
+  --clr-slate-100: #f1f5f9;
+
+  --clr-bg: var(--clr-zinc-100);
+  --clr-text: var(--clr-slate-800);
+}
+
+html.dark {
+  --clr-bg: var(--clr-zinc-900);
+  --clr-text: var(--clr-zinc-100);
+}
+
+html {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   line-height: 1.6;
+  color: var(--clr-text);
+  background-color: var(--clr-bg);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
 }
 
 main {
   flex: 1;
+}
+
+.loader {
+  width: 16px;
+  height: 16px;
+  border: 3px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--clr-white);
+  background-color: var(--clr-accent-500);
+  border: 1px solid var(--clr-accent-500);
+  border-radius: 3px;
+  transition: all 200ms ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--clr-accent-400);
+  border: 1px solid var(--clr-accent-400);
+  cursor: pointer;
+}
+
+.btn-primary:disabled {
+  opacity: 0.8;
+}
+
+.btn-primary .btn-text {
+  display: flex;
+  gap: 0.4rem;
 }
