@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import InputGroup from "@/components/InputGroup/InputGroup"
+import showToast from "@/scripts/showToast"
 import "./contact-form.css"
 
 const ContactForm = () => {
@@ -15,14 +16,14 @@ const ContactForm = () => {
         method: "POST",
         body: formData,
       })
-
       const data = await response.json()
 
       if (data.message) {
-        alert(data.message)
+        showToast(true, data.message)
       }
     } catch (error) {
       console.log(error)
+      showToast(false, "Something went wrong")
     }
     setIsLoading(false)
   }
