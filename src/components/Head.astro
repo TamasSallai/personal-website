@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string
+  desc: string
+}
+
+const { title, desc } = Astro.props
+---
+
+<head>
+  <!-- Global Metadata -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Primary Meta Tags -->
+  <title>{title}</title>
+  <meta name="title" content={title} />
+  <meta name="description" content={desc} />
+</head>

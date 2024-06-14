@@ -1,0 +1,24 @@
+---
+import Head from "@/components/Head.astro"
+import Header from "@/components/Header.astro"
+import Footer from "@/components/Footer.astro"
+
+interface Props {
+  title: string
+  desc: string
+}
+
+const { title, desc } = Astro.props
+
+const lang = Astro.currentLocale
+---
+
+<!doctype html>
+<html lang={lang || "en"}>
+  <Head {title} {desc} />
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>
