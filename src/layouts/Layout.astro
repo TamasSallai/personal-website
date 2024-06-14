@@ -2,6 +2,7 @@
 import Head from "@/components/Head.astro"
 import Header from "@/components/Header.astro"
 import Footer from "@/components/Footer.astro"
+import Toast from "@/components/Toast.astro"
 import "@/styles/reset.css"
 import "@/styles/global.css"
 import "@/styles/utility.css"
@@ -22,6 +23,7 @@ const lang = Astro.currentLocale
   <body>
     <Header />
     <slot />
+    <Toast />
     <Footer />
   </body>
 </html>

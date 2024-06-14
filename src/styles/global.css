@@ -7,13 +7,6 @@
 }
 
 :root {
-  --clr-white: #fff;
-  --clr-black: #000;
-
-  --clr-accent-500: #6366f1;
-  --clr-accent-400: #818cf8;
-  --clr-accent-300: #a5b4fc;
-
   --clr-zinc-900: #18181b;
   --clr-zinc-800: #27272a;
   --clr-zinc-700: #3f3f46;
@@ -34,8 +27,15 @@
   --clr-slate-200: #e2e8f0;
   --clr-slate-100: #f1f5f9;
 
-  --clr-bg: var(--clr-zinc-100);
-  --clr-text: var(--clr-slate-800);
+  --clr-white: #fff;
+  --clr-black: #000;
+
+  --clr-bg: #f9fafb;
+  --clr-text: var(--clr-slate-700);
+
+  --clr-accent-600: #2563eb;
+  --clr-accent-500: #3b82f6;
+  --clr-accent-400: #60a5fa;
 }
 
 html.dark {
@@ -48,7 +48,7 @@ html {
   font-size: 16px;
   line-height: 1.6;
   color: var(--clr-text);
-  background-color: var(--clr-bg);
+  background: var(--clr-bg);
 }
 
 body {
@@ -95,6 +95,10 @@ main {
   border: 1px solid var(--clr-accent-500);
   border-radius: 3px;
   transition: all 200ms ease;
+}
+
+.btn-primary:active {
+  background-color: var(--clr-accent-600);
 }
 
 .btn-primary:hover:not(:disabled) {
