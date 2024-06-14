@@ -19,7 +19,7 @@ textarea {
   padding: 0.5rem 1rem;
   font-size: 0.8rem;
   line-height: 1.6;
-  color: var(--clr-slate-900);
+  color: var(--clr-slate-700);
   background-color: var(--clr-white);
   border: 1px solid var(--clr-slate-400);
   border-radius: 4px;
@@ -46,10 +46,4 @@ html.dark textarea {
 html.dark input::placeholder,
 html.dark textarea::placeholder {
   color: var(--clr-zinc-500);
-}
-
-html.dark input:focus,
-html.dark textarea:focus {
-  border: 1px solid transparent;
-  outline: 2px solid var(--clr-accent-400);
 }
