@@ -1,0 +1,78 @@
+<button id="nav-toggle" aria-expanded="false" aria-label="toggle navigation">
+  <div class="line"></div>
+</button>
+
+<script>
+  const navToggle = document.querySelector("#nav-toggle")
+  const nav = document.querySelector("nav")
+
+  navToggle!.addEventListener("click", () => {
+    navToggle!.classList.toggle("open")
+    nav!.classList.toggle("open")
+  })
+</script>
+
+<style>
+  #nav-toggle {
+    display: none;
+    width: 36px;
+    height: 36px;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .line {
+    transition-duration: 0.5s;
+    position: relative;
+    height: 3px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: var(--clr-text);
+    transition-duration: 0.5s;
+  }
+
+  .line::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -10px;
+    height: 3px;
+    width: 100%;
+    border-radius: 3px;
+    background-color: var(--clr-text);
+    transition-duration: 0.5s;
+  }
+
+  .line::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    height: 3px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: var(--clr-text);
+    transition-duration: 0.5s;
+  }
+
+  #nav-toggle.open > .line {
+    background: transparent;
+  }
+
+  #nav-toggle.open > .line::before {
+    transform: rotateZ(45deg) translate(7px, 7px);
+  }
+
+  #nav-toggle.open > .line::after {
+    transform: rotateZ(-45deg) translate(7px, -7px);
+  }
+
+  @media screen and (max-width: 768px) {
+    #nav-toggle {
+      display: block;
+    }
+  }
+</style>
