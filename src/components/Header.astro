@@ -1,1 +1,66 @@
-<header>header</header>
+---
+import Link from "./Link.astro"
+import NavToggle from "./NavToggle.astro"
+---
+
+<header>
+  <div class="py-4 container flex items-center">
+    <a class="logo" href="/">Logo</a>
+    <nav class="flex gap-4">
+      <Link href="/">Home</Link>
+      <Link href="/about">About</Link>
+      <Link href="/projects">Projects</Link>
+      <Link
+        href="/contact"
+        style="button"
+        icon={{ name: "arrow-right", side: "right" }}
+      >
+        Contact
+      </Link>
+    </nav>
+    <NavToggle />
+  </div>
+</header>
+
+<style>
+  .logo {
+    margin-right: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    nav {
+      display: none;
+    }
+
+    nav.open {
+      position: absolute;
+      top: 4rem;
+      right: 1rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      background-color: var(--clr-slate-200);
+      border: 1px solid var(--clr-slate-400);
+    }
+
+    nav::before {
+      content: "";
+      position: absolute;
+      top: -0.5rem;
+      right: 0.5rem;
+      width: 3.2rem;
+      height: 3.2rem;
+      background-color: var(--clr-slate-200);
+      border: 1px solid var(--clr-slate-400);
+      clip-path: polygon(0 0, 50% 0, 100% 50%, 0 50%);
+      transform: rotate(45deg);
+    }
+
+    :global(.dark) nav,
+    :global(.dark) nav::before {
+      border-color: var(--clr-zinc-700);
+      background-color: var(--clr-zinc-950);
+    }
+  }
+</style>

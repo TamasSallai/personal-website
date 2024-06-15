@@ -13,6 +13,10 @@
   flex-direction: column;
 }
 
+.items-center {
+  align-items: center;
+}
+
 .gap-1 {
   gap: 0.25rem;
 }
@@ -27,4 +31,40 @@
 
 .gap-4 {
   gap: 1rem;
+}
+
+.px-1 {
+  padding-inline: 0.25rem;
+}
+
+.px-2 {
+  padding-inline: 0.5rem;
+}
+
+.px-3 {
+  padding-inline: 0.75rem;
+}
+
+.px-4 {
+  padding-inline: 1rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }

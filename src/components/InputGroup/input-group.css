@@ -33,7 +33,7 @@ textarea::placeholder {
 input:focus,
 textarea:focus {
   border: 1px solid transparent;
-  outline: 2px solid var(--clr-accent-500);
+  outline: 3px solid var(--clr-accent-500);
 }
 
 html.dark input,
