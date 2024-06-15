@@ -1,10 +1,11 @@
 ---
 import Link from "./Link.astro"
+import ThemeButton from "./ThemeButton.astro"
 import NavToggle from "./NavToggle.astro"
 ---
 
 <header>
-  <div class="py-4 container flex items-center">
+  <div class="py-5 container flex items-center">
     <a class="logo" href="/">Logo</a>
     <nav class="flex gap-4">
       <Link href="/">Home</Link>
@@ -17,6 +18,8 @@ import NavToggle from "./NavToggle.astro"
       >
         Contact
       </Link>
+
+      <ThemeButton />
     </nav>
     <NavToggle />
   </div>
