@@ -1,9 +1,13 @@
 ---
 import Layout from "@/layouts/Layout.astro"
+import ContactForm from "@/components/ContactForm/ContactForm"
 ---
 
 <Layout title="Contact" desc="Description">
   <main>
-    <div class="container">Contact</div>
+    <div class="container">
+      <h1>Contact</h1>
+      <ContactForm client:only="react" />
+    </div>
   </main>
 </Layout>
