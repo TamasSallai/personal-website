@@ -95,7 +95,6 @@ main {
   border: none;
   border-radius: 3px;
   transition: all 200ms ease;
-  cursor: pointer;
 }
 
 .button:disabled {
@@ -104,4 +103,5 @@ main {
 
 .button:hover:not(:disabled) {
   background-color: var(--clr-accent-400);
+  cursor: pointer;
 }
