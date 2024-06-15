@@ -97,7 +97,7 @@ main {
   transition: all 200ms ease;
 }
 
-.btn-primary:active {
+.btn-primary:enabled:active {
   background-color: var(--clr-accent-600);
 }
 
@@ -108,10 +108,15 @@ main {
 }
 
 .btn-primary:disabled {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .btn-primary .btn-text {
   display: flex;
   gap: 0.4rem;
+}
+
+.g-recaptcha {
+  transform: scale(0.77);
+  transform-origin: 0 0;
 }

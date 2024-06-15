@@ -5,3 +5,10 @@ form {
   flex-direction: column;
   gap: 1.25rem;
 }
+
+@media screen and (max-width: 360px) {
+  .captcha-container {
+    transform: scale(0.95);
+    transform-origin: 0 0;
+  }
+}

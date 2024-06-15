@@ -1,11 +1,15 @@
-import React, { useState } from "react"
 import axios from "axios"
+import React, { useState } from "react"
+import ReCAPTCHA from "react-google-recaptcha"
 import showToast from "@/scripts/showToast"
 import InputGroup from "@/components/InputGroup/InputGroup"
 import "./contact-form.css"
 
+const RECAPTCHA_SITE_KEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY
+
 const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false)
+  const [isRecaptchaCompleted, setIsReCaptchaCompleted] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -50,7 +54,17 @@ const ContactForm = () => {
         placeholder="Tell me how can i help you..."
       />
 
-      <button className="btn-primary" disabled={isLoading}>
+      <div className="captcha-container">
+        <ReCAPTCHA
+          sitekey={RECAPTCHA_SITE_KEY}
+          onChange={() => setIsReCaptchaCompleted(true)}
+        />
+      </div>
+
+      <button
+        className="btn-primary"
+        disabled={isLoading || !isRecaptchaCompleted}
+      >
         {isLoading ? (
           <span className="loader"></span>
         ) : (
