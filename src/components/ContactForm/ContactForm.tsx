@@ -1,11 +1,14 @@
 import axios from "axios"
 import React, { useState } from "react"
 import ReCAPTCHA from "react-google-recaptcha"
+import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 import showToast from "@/scripts/showToast"
 import InputGroup from "@/components/InputGroup/InputGroup"
 import "./contact-form.css"
 
-const RECAPTCHA_SITE_KEY = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY
+const currentURL = new URL(window.location.href)
+const lang = getLangFromUrl(currentURL)
+const t = useTranslations(lang)
 
 const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false)
@@ -17,9 +20,9 @@ const ContactForm = () => {
     const formData = new FormData(e.target as HTMLFormElement)
     try {
       await axios.post("/api/contact", formData)
-      showToast(true, "Message sent")
+      showToast(true, `${t("form.toast.success")} 👍`)
     } catch (error) {
-      showToast(false, "Something went wrong")
+      showToast(false, `${t("form.toast.error")} 😰`)
     }
     setIsLoading(false)
   }
@@ -27,37 +30,49 @@ const ContactForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <InputGroup
-        label="Full Name"
+        label={t("form.name.label")}
         name="name"
         type="text"
         required
-        placeholder="Your name"
+        placeholder={t("form.name.placeholder")}
       />
+
+      <div className="flex gap-4">
+        <InputGroup
+          label={t("form.email.label")}
+          name="email"
+          type="email"
+          required
+          placeholder={t("form.email.placeholder")}
+        />
+        <InputGroup
+          label={t("form.phone.label")}
+          name="phone"
+          type="text"
+          placeholder={t("form.phone.placeholder")}
+        />
+      </div>
+
       <InputGroup
-        label="E-mail Address"
-        name="email"
-        type="email"
-        required
-        placeholder="example@gmail.com"
-      />
-      <InputGroup
-        label="Phone Number"
-        name="phone"
+        label={t("form.company.label")}
+        name="company"
         type="text"
-        placeholder="+36 30 123 456"
+        placeholder={t("form.company.placeholder")}
       />
+
       <InputGroup
-        label="Message"
+        label={t("form.message.label")}
         name="message"
         type="textarea"
         required
-        placeholder="Tell me how can i help you..."
+        placeholder={t("form.message.placeholder")}
       />
 
       <div className="captcha-container">
         <ReCAPTCHA
-          sitekey={RECAPTCHA_SITE_KEY}
+          sitekey={import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY}
           onChange={() => setIsReCaptchaCompleted(true)}
+          hl={lang}
         />
       </div>
 
@@ -66,7 +81,7 @@ const ContactForm = () => {
           <span className="loader"></span>
         ) : (
           <>
-            Send <SendIcon />
+            {t("form.submit")} <SendIcon />
           </>
         )}
       </button>

@@ -1,25 +1,38 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n"
+import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 import Link from "./Link.astro"
 import ThemeButton from "./ThemeButton.astro"
+import LangButton from "./LangButton.astro"
 import NavToggle from "./NavToggle.astro"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const homeURL = getRelativeLocaleUrl(lang, "/")
+const aboutURL = getRelativeLocaleUrl(lang, "/about")
+const projectsURL = getRelativeLocaleUrl(lang, "/projects")
+const contactURL = getRelativeLocaleUrl(lang, "/contact")
 ---
 
 <header>
   <div class="py-5 container flex items-center">
     <a class="logo" href="/">Logo</a>
     <nav class="flex gap-4">
-      <Link href="/">Home</Link>
-      <Link href="/about">About</Link>
-      <Link href="/projects">Projects</Link>
+      <Link href={homeURL}>{t("nav.home")}</Link>
+      <Link href={aboutURL}>{t("nav.about")}</Link>
+      <Link href={projectsURL}>{t("nav.projects")}</Link>
       <Link
-        href="/contact"
+        href={contactURL}
         style="button"
         icon={{ name: "utils/arrow-right", side: "right" }}
       >
-        Contact
+        {t("nav.contact")}
       </Link>
-
-      <ThemeButton />
+      <div class="flex justify-center gap-4">
+        <ThemeButton />
+        <LangButton />
+      </div>
     </nav>
     <NavToggle />
   </div>
@@ -37,7 +50,7 @@ import NavToggle from "./NavToggle.astro"
 
     nav.open {
       position: absolute;
-      top: 4rem;
+      top: 5rem;
       right: 1rem;
       padding: 2rem;
       display: flex;

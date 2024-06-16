@@ -1,12 +1,16 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 import Layout from "@/layouts/Layout.astro"
 import ContactForm from "@/components/ContactForm/ContactForm"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <Layout title="Contact" desc="Description">
   <main>
     <div class="container">
-      <h1>Contact</h1>
+      <h1>{t("nav.contact")}</h1>
       <ContactForm client:only="react" />
     </div>
   </main>

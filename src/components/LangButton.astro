@@ -1,0 +1,18 @@
+---
+import { Icon } from "astro-icon/components"
+import { getRelativeLocaleUrl } from "astro:i18n"
+import { getLangFromUrl } from "@/i18n/utils"
+
+const lang = getLangFromUrl(Astro.url)
+const otherLang = lang === "hu" ? "en" : "hu"
+
+const currentPath = Astro.url.pathname.startsWith(`/${lang}`)
+  ? Astro.url.pathname.slice(lang.length + 1)
+  : Astro.url.pathname
+
+const langSwitchURL = getRelativeLocaleUrl(otherLang, currentPath)
+---
+
+<a href={langSwitchURL} class="flex items-center">
+  <Icon name={lang === "hu" ? "lang/en" : "lang/hu"} size={24} />
+</a>
