@@ -37,7 +37,7 @@ const ContactForm = () => {
         placeholder={t("form.name.placeholder")}
       />
 
-      <div className="flex flex-row gap-4">
+      <div className="flex flex-row gap-5">
         <InputGroup
           label={t("form.email.label")}
           name="email"

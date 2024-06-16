@@ -47,6 +47,10 @@
   gap: 1rem;
 }
 
+.gap-5 {
+  gap: 1.25rem;
+}
+
 .px-1 {
   padding-inline: 0.25rem;
 }
