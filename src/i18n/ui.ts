@@ -19,6 +19,8 @@ export const ui = {
     "form.toast.success": "Message sent!",
     "form.toast.error": "Something went wrong!",
     "form.submit": "Send",
+    // Other
+    name: "Tamas Sallai",
   },
   hu: {
     // Navigation
@@ -40,6 +42,8 @@ export const ui = {
     "form.toast.success": "Üzenet elküldve!",
     "form.toast.error": "Nem várt hiba történt!",
     "form.submit": "Küldés",
+    // Other
+    name: "Sallai Tamás",
   },
 } as const
 

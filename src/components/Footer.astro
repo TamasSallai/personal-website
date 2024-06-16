@@ -1,1 +1,51 @@
-<footer>footer</footer>
+---
+import { Icon } from "astro-icon/components"
+import { getLangFromUrl, useTranslations } from "@/i18n/utils"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<footer>
+  <div class="py-3 container flex flex-col items-center gap-2">
+    <div class="flex items-center gap-5">
+      <a
+        href="https://github.com/TamasSallai"
+        class="display-darkmode"
+        aria-label="Visit GitHub page"
+      >
+        <Icon name="social/github-white" size={28} />
+      </a>
+
+      <a
+        href="https://github.com/TamasSallai"
+        class="display-lightmode"
+        aria-label="Visit GitHub page"
+      >
+        <Icon name="social/github" size={28} />
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/tamás-sallai-627872188/"
+        aria-label="Visit LinkedIn page"
+      >
+        <Icon name="social/linkedin" size={28} /></a
+      >
+
+      <a href="mailto:tamas.sallai.hu@gmail.com" aria-label="Write an email">
+        <Icon name="social/gmail" size={28} /></a
+      >
+    </div>
+
+    <p>
+      Copyright &copy; <span id="copyright"></span>
+      {t("name")}
+    </p>
+  </div>
+</footer>
+
+<script>
+  document.querySelector("#copyright")!.textContent = new Date()
+    .getFullYear()
+    .toString()
+</script>

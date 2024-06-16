@@ -5,9 +5,9 @@ const logos = await Astro.glob("../icons/logos/*.svg")
 
 const getLogoTheme = (name: string) => {
   if (name.includes(".darkmode")) {
-    return "logo-darkmode"
+    return "display-darkmode"
   } else if (name.includes(".lightmode")) {
-    return "logo-lightmode"
+    return "display-lightmode"
   }
 }
 
@@ -80,21 +80,5 @@ const getLogoName = (src: string) => {
     to {
       transform: translate(calc(-50% - 0.5rem));
     }
-  }
-
-  .logo-darkmode {
-    display: none;
-  }
-
-  .logo-lightmode {
-    display: block;
-  }
-
-  global(.dark) .logo-darkmode {
-    display: block;
-  }
-
-  global(.dark) .logo-lightmode {
-    display: none;
   }
 </style>

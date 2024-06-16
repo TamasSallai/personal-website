@@ -106,3 +106,19 @@ main {
   background-color: var(--clr-accent-400);
   cursor: pointer;
 }
+
+.display-lightmode {
+  display: block;
+}
+
+.display-darkmode {
+  display: none;
+}
+
+html.dark .display-lightmode {
+  display: none;
+}
+
+html.dark .display-darkmode {
+  display: block;
+}
