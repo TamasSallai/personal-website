@@ -9,6 +9,16 @@
   display: flex;
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
+@media screen and (max-width: 768px) {
+  .flex-row {
+    flex-direction: column;
+  }
+}
+
 .flex-col {
   flex-direction: column;
 }
