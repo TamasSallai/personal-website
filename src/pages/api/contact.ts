@@ -9,6 +9,7 @@ export const POST: APIRoute = async ({ request }) => {
     const name = data.get("name")
     const email = data.get("email")
     const phone = data.get("phone")
+    const company = data.get("company")
     const message = data.get("message")
 
     if (!name || !email || !phone || !message) {
@@ -38,6 +39,7 @@ export const POST: APIRoute = async ({ request }) => {
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Phone:</strong> ${phone}</p>
+            <p><strong>Company:</strong> ${company}</p>
             <p><strong>Message:</strong></p>
             <p>${message}</p>
           </div>
