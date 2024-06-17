@@ -7,6 +7,9 @@ import icon from "astro-icon"
 export default defineConfig({
   integrations: [icon(), react()],
   output: "server",
+  adapter: node({
+    mode: "standalone",
+  }),
   i18n: {
     defaultLocale: "hu",
     locales: ["hu", "en"],
@@ -14,7 +17,4 @@ export default defineConfig({
       prefixDefaultLocale: true,
     },
   },
-  adapter: node({
-    mode: "standalone",
-  }),
 })
