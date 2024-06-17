@@ -31,7 +31,6 @@
   --clr-white: #fff;
   --clr-black: #000;
 
-  --clr-bg: #f9fafb;
   --clr-text: var(--clr-slate-700);
   --clr-heading: var(--clr-slate-800);
 
@@ -41,7 +40,6 @@
 }
 
 html.dark {
-  --clr-bg: var(--clr-zinc-900);
   --clr-text: var(--clr-zinc-300);
   --clr-heading: var(--clr-zinc-100);
   background: linear-gradient(
