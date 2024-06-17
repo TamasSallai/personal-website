@@ -1,0 +1,108 @@
+---
+import { technologies } from "@/data/technologies"
+---
+
+<div class="flex gap-2 flex-wrap">
+  {
+    technologies.map(({ name, className, href }) => (
+      <a target="_blank" class={className} {href}>
+        {name}
+      </a>
+    ))
+  }
+</div>
+
+<style>
+  a {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .html {
+    background-color: #e34c26;
+    color: #fff;
+  }
+
+  .css {
+    background-color: #264de4;
+    color: #fff;
+  }
+
+  .tailwind {
+    background-color: #38bdf8;
+    color: #fff;
+  }
+
+  .js {
+    background-color: #f0db4f;
+    color: #000;
+  }
+
+  .ts {
+    background-color: #3178c6;
+    color: #fff;
+  }
+
+  .react {
+    background-color: #61dafb;
+    color: #000;
+  }
+
+  .astro {
+    background-color: #e974c2;
+    color: #fff;
+  }
+
+  .node {
+    background-color: #3c873a;
+    color: #fff;
+  }
+
+  .express {
+    background-color: #fff;
+    color: #000;
+  }
+
+  .fastify {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .nest {
+    background-color: #e0234e;
+    color: #fff;
+  }
+
+  .graphql {
+    background-color: #e535ab;
+    color: #fff;
+  }
+
+  .git {
+    background-color: #f05032;
+    color: #fff;
+  }
+
+  .docker {
+    background-color: #1d63ed;
+    color: #fff;
+  }
+
+  .postgresql {
+    background-color: #336791;
+    color: #fff;
+  }
+
+  .mongodb {
+    background-color: #3fa037;
+    color: #fff;
+  }
+
+  .firebase {
+    background-color: #ffcb2b;
+    color: #000;
+  }
+</style>

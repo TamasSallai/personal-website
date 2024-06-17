@@ -1,7 +1,7 @@
 @font-face {
-  font-family: "Inter";
-  src: url("/fonts/Inter-VariableFont_slnt,wght.ttf") format("woff");
-  font-weight: normal;
+  font-family: "Open Sans";
+  src: url("/fonts/OpenSans-VariableFont_wdth,wght.ttf") format("woff");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
@@ -33,24 +33,42 @@
 
   --clr-bg: #f9fafb;
   --clr-text: var(--clr-slate-700);
+  --clr-heading: var(--clr-slate-800);
 
-  --clr-accent-600: #2563eb;
-  --clr-accent-500: #3b82f6;
-  --clr-accent-400: #60a5fa;
+  --clr-accent-600: #4f46e5;
+  --clr-accent-500: #6366f1;
+  --clr-accent-400: #818cf8;
 }
 
 html.dark {
   --clr-bg: var(--clr-zinc-900);
-  --clr-text: var(--clr-zinc-100);
+  --clr-text: var(--clr-zinc-300);
+  --clr-heading: var(--clr-zinc-100);
 }
 
 html {
   color-scheme: light dark;
-  font-family: "Inter", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: var(--clr-text);
   background: var(--clr-bg);
+}
+
+.display-lightmode {
+  display: block;
+}
+
+.display-darkmode {
+  display: none;
+}
+
+html.dark .display-lightmode {
+  display: none;
+}
+
+html.dark .display-darkmode {
+  display: block;
 }
 
 body {
@@ -58,8 +76,19 @@ body {
   flex-direction: column;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  line-height: 1;
+  color: var(--clr-heading);
+}
+
 main {
   flex: 1;
+  display: flex;
+  align-items: stretch;
 }
 
 .loader {
@@ -107,18 +136,15 @@ main {
   cursor: pointer;
 }
 
-.display-lightmode {
-  display: block;
+.page-head {
+  padding: 1.4rem 0;
+  font-size: 2.25rem;
+  border-bottom: 1px solid var(--clr-text);
 }
 
-.display-darkmode {
-  display: none;
-}
-
-html.dark .display-lightmode {
-  display: none;
-}
-
-html.dark .display-darkmode {
-  display: block;
+@media screen and (max-width: 640px) {
+  .page-head {
+    padding: 1.2rem 0;
+    font-size: 1.75rem;
+  }
 }

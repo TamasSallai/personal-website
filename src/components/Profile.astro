@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets"
+import profileImage from "@/assets/profile-1.png"
+---
+
+<div class="profile-container">
+  <Image src={profileImage} alt="profile" width={220} loading="eager" />
+</div>
+
+<style>
+  .profile-container {
+    max-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+    background-color: rgb(244, 63, 94);
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  }
+</style>

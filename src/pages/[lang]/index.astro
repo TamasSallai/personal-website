@@ -1,13 +1,82 @@
 ---
-import LogoScroller from "@/components/LogoScroller.astro"
 import Layout from "@/layouts/Layout.astro"
+import Link from "@/components/Link.astro"
+import LogoScroller from "@/components/LogoScroller.astro"
+import { getLangFromUrl, useTranslations } from "@/i18n/utils"
+import { getRelativeLocaleUrl } from "astro:i18n"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const aboutURL = getRelativeLocaleUrl(lang, "/about")
 ---
 
-<Layout title="Hello Title" desc="Hello Description">
+<Layout title={t("home.title")} desc={t("home.desc")}>
   <main>
     <div class="container">
-      <h1>Home</h1>
-      <LogoScroller />
+      <div class="hero-container">
+        <h1>{t("home.h1")}</h1>
+        <h2>{t("home.h2")}</h2>
+        <p>{t("home.p")}</p>
+        <div class="flex flex-row gap-4">
+          <Link href={aboutURL} style="button">{t("home.cta")}</Link>
+          <Link
+            href=`#`
+            icon={{
+              name: "utils/download",
+              side: "right",
+            }}>{t("resume")}</Link
+          >
+        </div>
+        <LogoScroller />
+      </div>
     </div>
   </main>
 </Layout>
+
+<style>
+  .hero-container {
+    height: 100%;
+    width: 100%;
+    padding: 0 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    max-width: 38rem;
+    margin-bottom: 1rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .hero-container {
+      padding: 0;
+      align-items: center;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    h1 {
+      font-size: 1.6rem;
+    }
+
+    h2 {
+      font-size: 1.125rem;
+    }
+  }
+</style>

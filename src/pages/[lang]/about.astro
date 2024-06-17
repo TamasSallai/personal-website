@@ -1,13 +1,88 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n"
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 import Layout from "@/layouts/Layout.astro"
+import Link from "@/components/Link.astro"
+import Profile from "@/components/Profile.astro"
+import TechBadges from "@/components/TechBadges.astro"
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
+const projectsURL = getRelativeLocaleUrl(lang, "/projects")
 ---
 
 <Layout title="About" desc="Description">
   <main>
-    <div class="container">{t("nav.about")}</div>
+    <div class="container">
+      <h1 class="page-head">{t("about.h1")}</h1>
+      <div class="about-container">
+        <div class="profile-section">
+          <Profile />
+          <h2>{t("name")}</h2>
+          <span>{t("title")}</span>
+        </div>
+
+        <div class="intro-section">
+          <p>{t("about.p1")}</p>
+          <p>{t("about.p2")}</p>
+          <p>{t("about.p3")}</p>
+          <p>{t("about.p4")}</p>
+          <p>{t("about.p5")}</p>
+          <p>{t("about.p6")}</p>
+          <div class="flex gap-4">
+            <Link href={projectsURL} style="button">Projektek 🚀</Link>
+            <Link
+              href=`#`
+              icon={{
+                name: "utils/download",
+                side: "right",
+              }}>Önéletrajz</Link
+            >
+          </div>
+
+          <h2>{t("about.h2")}</h2>
+          <TechBadges />
+        </div>
+      </div>
+    </div>
   </main>
 </Layout>
+
+<style>
+  .about-container {
+    padding: 2rem 0;
+    display: flex;
+    gap: 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+    }
+  }
+
+  .profile-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h2 {
+    margin-top: 1rem;
+    font-size: 1.75rem;
+    line-height: 1;
+  }
+
+  span {
+    margin-top: 0.6rem;
+    line-height: 1;
+  }
+
+  .intro-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+</style>

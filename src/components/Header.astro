@@ -17,7 +17,7 @@ const contactURL = getRelativeLocaleUrl(lang, "/contact")
 
 <header>
   <div class="py-5 container flex items-center">
-    <a class="logo" href="/">Logo</a>
+    <a class="logo" href="/">TS</a>
     <nav class="flex gap-4">
       <Link href={homeURL}>{t("nav.home")}</Link>
       <Link href={aboutURL}>{t("nav.about")}</Link>
@@ -41,6 +41,14 @@ const contactURL = getRelativeLocaleUrl(lang, "/contact")
 <style>
   .logo {
     margin-right: auto;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--clr-white);
+    background-color: var(--clr-accent-500);
+    border-radius: 4px;
+    cursor: pointer;
   }
 
   @media screen and (max-width: 768px) {
