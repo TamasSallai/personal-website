@@ -44,31 +44,23 @@ html.dark {
   --clr-bg: var(--clr-zinc-900);
   --clr-text: var(--clr-zinc-300);
   --clr-heading: var(--clr-zinc-100);
+  background: linear-gradient(
+    180deg,
+    var(--clr-zinc-900) 60%,
+    var(--clr-zinc-950)
+  );
 }
 
 html {
-  color-scheme: light dark;
   font-family: "Open Sans", sans-serif;
-  font-size: 16px;
+  font-size: 1.05rem;
   line-height: 1.6;
   color: var(--clr-text);
-  background: var(--clr-bg);
-}
-
-.display-lightmode {
-  display: block;
-}
-
-.display-darkmode {
-  display: none;
-}
-
-html.dark .display-lightmode {
-  display: none;
-}
-
-html.dark .display-darkmode {
-  display: block;
+  background: linear-gradient(
+    180deg,
+    var(--clr-white) 60%,
+    var(--clr-zinc-400)
+  );
 }
 
 body {
@@ -147,4 +139,20 @@ main {
     padding: 1.2rem 0;
     font-size: 1.75rem;
   }
+}
+
+.display-lightmode {
+  display: block;
+}
+
+.display-darkmode {
+  display: none;
+}
+
+html.dark .display-lightmode {
+  display: none;
+}
+
+html.dark .display-darkmode {
+  display: block;
 }

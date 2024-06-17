@@ -39,4 +39,12 @@ const { href, style = "link", icon } = Astro.props
     line-height: 1;
     transition: all 200ms ease;
   }
+
+  .link:hover {
+    color: var(--clr-accent-500);
+  }
+
+  :global(.dark) a:hover {
+    color: var(--clr-white);
+  }
 </style>

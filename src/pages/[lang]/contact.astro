@@ -11,7 +11,12 @@ const t = useTranslations(lang)
   <main>
     <div class="container">
       <h1 class="page-head">{t("nav.contact")}</h1>
-      <ContactForm client:only="react" />
+      <div class="py-4 flex flex-col items-center gap-5">
+        <p>
+          {t("contact.p1")}
+        </p>
+        <ContactForm client:only="react" />
+      </div>
     </div>
   </main>
 </Layout>

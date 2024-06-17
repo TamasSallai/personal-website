@@ -5,20 +5,6 @@ export const ui = {
     "nav.about": "About Me",
     "nav.projects": "Projects",
     "nav.contact": "Contact",
-    // Contact Form
-    "form.name.label": "Full Name",
-    "form.name.placeholder": "Full Name",
-    "form.email.label": "E-mail Address",
-    "form.email.placeholder": "example@gmail.com",
-    "form.phone.label": "Phone Number",
-    "form.phone.placeholder": "+123 456 7890",
-    "form.company.label": "Company Name",
-    "form.company.placeholder": "Are you representing a company?",
-    "form.message.label": "Message",
-    "form.message.placeholder": "Tell me how can i help you.",
-    "form.toast.success": "Message sent!",
-    "form.toast.error": "Something went wrong!",
-    "form.submit": "Send",
     // Home
     "home.title": "Tamas Sallai - Full-Stack Developer",
     "home.desc":
@@ -43,6 +29,25 @@ export const ui = {
       "Currently, I specialize in TypeScript. I use it for both backend and frontend development.",
     "about.p6":
       "I am familiar with various frameworks and technologies, which you can read about below. If you don't find what you're looking for, don't worry. Just send a message and let me know what you need.",
+    // Projects
+    "projects.p1": "Soon...",
+    // Contact
+    "contact.p1":
+      "Do you have a project idea you want to bring to life? Looking to hire? Feel free to reach out!",
+    // Contact Form
+    "form.name.label": "Full Name",
+    "form.name.placeholder": "Full Name",
+    "form.email.label": "E-mail Address",
+    "form.email.placeholder": "example@gmail.com",
+    "form.phone.label": "Phone Number",
+    "form.phone.placeholder": "+123 456 7890",
+    "form.company.label": "Company Name",
+    "form.company.placeholder": "Are you representing a company?",
+    "form.message.label": "Message",
+    "form.message.placeholder": "Tell me how can i help you.",
+    "form.toast.success": "Message sent!",
+    "form.toast.error": "Something went wrong!",
+    "form.submit": "Send",
     // Other
     name: "Tamas Sallai",
     title: "Full-Stack Developer",
@@ -54,20 +59,7 @@ export const ui = {
     "nav.about": "Bemutatkozás",
     "nav.projects": "Projektek",
     "nav.contact": "Kapcsolat",
-    // Contact Form
-    "form.name.label": "Teljes név",
-    "form.name.placeholder": "Teljes név",
-    "form.email.label": "E-mail cím",
-    "form.email.placeholder": "példa@gmail.com",
-    "form.phone.label": "Telefonszám",
-    "form.phone.placeholder": "+36 30 123 4567",
-    "form.company.label": "Cég neve",
-    "form.company.placeholder": "Egy céget képviselsz?",
-    "form.message.label": "Üzenet",
-    "form.message.placeholder": "Mond el miben segíthetek.",
-    "form.toast.success": "Üzenet elküldve!",
-    "form.toast.error": "Nem várt hiba történt!",
-    "form.submit": "Küldés",
+
     // Home
     "home.title": "Sallai Tamás - Full-Stack fejlesztő",
     "home.desc":
@@ -92,7 +84,25 @@ export const ui = {
       "Jelenleg a TypeScript nyelv az, amire speicalizálódok. Ezt használom backenden és frontenden egyaránt.",
     "about.p6":
       "Számos keretrendszert és technológiát ismerek, amelyekről lentebb olvashatsz. Ha mégsem találod azt, amit keresel akkor se csüggedj. Írj egy üzenetet és mond el mire van szükséged.",
-
+    // Projects
+    "projects.p1": "Hamarosan...",
+    // Contact
+    "contact.p1":
+      "Van egy projekt ölted amit megvalósítanál? Szeretnél alkalmazni? Írj bátran!",
+    // Contact Form
+    "form.name.label": "Teljes név",
+    "form.name.placeholder": "Teljes név",
+    "form.email.label": "E-mail cím",
+    "form.email.placeholder": "példa@gmail.com",
+    "form.phone.label": "Telefonszám",
+    "form.phone.placeholder": "+36 30 123 4567",
+    "form.company.label": "Cég neve",
+    "form.company.placeholder": "Egy céget képviselsz?",
+    "form.message.label": "Üzenet",
+    "form.message.placeholder": "Mond el miben segíthetek.",
+    "form.toast.success": "Üzenet elküldve!",
+    "form.toast.error": "Nem várt hiba történt!",
+    "form.submit": "Küldés",
     // Other
     name: "Sallai Tamás",
     title: "Full-Stack fejlesztő",

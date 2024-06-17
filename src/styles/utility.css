@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 65rem;
   margin-inline: auto;
-  padding-inline: 2rem;
+  padding-inline: 4%;
 }
 
 .flex {
@@ -33,6 +33,10 @@
 
 .justify-center {
   justify-content: center;
+}
+
+.self-start {
+  align-self: flex-start;
 }
 
 .gap-1 {

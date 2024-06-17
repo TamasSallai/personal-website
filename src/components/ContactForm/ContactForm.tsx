@@ -76,7 +76,10 @@ const ContactForm = () => {
         />
       </div>
 
-      <button className="button" disabled={isLoading || !isRecaptchaCompleted}>
+      <button
+        className="button self-start"
+        disabled={isLoading || !isRecaptchaCompleted}
+      >
         {isLoading ? (
           <span className="loader"></span>
         ) : (
