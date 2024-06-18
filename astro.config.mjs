@@ -1,15 +1,11 @@
 import { defineConfig } from "astro/config"
+import cloudflare from "@astrojs/cloudflare"
 import react from "@astrojs/react"
-import node from "@astrojs/node"
 import icon from "astro-icon"
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [icon(), react()],
-  output: "server",
-  adapter: node({
-    mode: "standalone",
-  }),
   i18n: {
     defaultLocale: "hu",
     locales: ["hu", "en"],
@@ -17,4 +13,8 @@ export default defineConfig({
       prefixDefaultLocale: true,
     },
   },
+  output: "server",
+  adapter: cloudflare({
+    imageService: "cloudflare",
+  }),
 })
