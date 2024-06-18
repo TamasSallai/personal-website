@@ -1,7 +1,5 @@
 import type { APIRoute } from "astro"
-import sg from "@sendgrid/mail"
-
-sg.setApiKey(import.meta.env.SENDGRID_API_KEY)
+import axios from "axios"
 
 export const POST: APIRoute = async ({ request }) => {
   try {
@@ -45,21 +43,36 @@ export const POST: APIRoute = async ({ request }) => {
           </div>
         </div>
       </body>
-    </html>
+    </html>`
 
-      `
+    const payload = {
+      personalizations: [
+        {
+          to: [{ email: import.meta.env.SENDGRID_EMAIL_TO }],
+          subject: `New contact message from ${name}`,
+        },
+      ],
+      from: { email: import.meta.env.SENDGRID_EMAIL_FROM },
+      content: [{ type: "text/html", value: html }],
+    }
 
-    await sg.send({
-      to: import.meta.env.SENDGRID_EMAIL_TO,
-      from: import.meta.env.SENDGRID_EMAIL_FROM,
-      subject: `New contact message from ${name}`,
-      html,
+    await axios.post("https://api.sendgrid.com/v3/mail/send", payload, {
+      headers: {
+        Authorization: `Bearer ${import.meta.env.SENDGRID_API_KEY}`,
+        "Content-Type": "application/json",
+      },
     })
 
     return new Response(
       JSON.stringify({
         message: "Message sent",
       }),
+      {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      },
     )
   } catch (error) {
     console.error(error)
