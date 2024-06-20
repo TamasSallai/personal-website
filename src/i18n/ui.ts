@@ -99,7 +99,7 @@ export const ui = {
     "form.company.label": "Cég neve",
     "form.company.placeholder": "Egy céget képviselsz?",
     "form.message.label": "Üzenet",
-    "form.message.placeholder": "Mond el miben segíthetek.",
+    "form.message.placeholder": "Mondd el, miben segíthetek.",
     "form.toast.success": "Üzenet elküldve!",
     "form.toast.error": "Nem várt hiba történt!",
     "form.submit": "Küldés",
