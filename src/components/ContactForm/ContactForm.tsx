@@ -37,7 +37,7 @@ const ContactForm = () => {
         placeholder={t("form.name.placeholder")}
       />
 
-      <div className="flex flex-row gap-5">
+      <div className="form-row">
         <InputGroup
           label={t("form.email.label")}
           name="email"
@@ -77,7 +77,7 @@ const ContactForm = () => {
       </div>
 
       <button
-        className="button self-start"
+        className="button-primary self-start"
         disabled={isLoading || !isRecaptchaCompleted}
       >
         {isLoading ? (

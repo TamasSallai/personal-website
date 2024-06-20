@@ -1,8 +1,21 @@
 form {
+  width: 100%;
   max-width: 30rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+}
+
+@media screen and (max-width: 560px) {
+  .form-row {
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 360px) {
