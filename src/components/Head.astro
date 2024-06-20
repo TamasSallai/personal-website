@@ -1,4 +1,6 @@
 ---
+import SEO from "./SEO.astro"
+
 interface Props {
   title: string
   desc: string
@@ -18,4 +20,7 @@ const { title, desc } = Astro.props
   <title>{title}</title>
   <meta name="title" content={title} />
   <meta name="description" content={desc} />
+
+  <!-- Seo -->
+  <SEO {title} {desc} />
 </head>
