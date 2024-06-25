@@ -37,11 +37,11 @@ const { href, style = "link", icon } = Astro.props
     font-size: 1rem;
     font-weight: 400;
     line-height: 1;
-    transition: all 200ms ease;
   }
 
   .link:hover {
     color: var(--clr-accent-500);
+    transition: color 200ms ease;
   }
 
   :global(.dark) a:hover {
