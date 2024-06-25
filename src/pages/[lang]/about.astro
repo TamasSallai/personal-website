@@ -11,7 +11,7 @@ const t = useTranslations(lang)
 const projectsURL = getRelativeLocaleUrl(lang, "/projects")
 ---
 
-<Layout title="About" desc="Description">
+<Layout title={t("about.title")} desc="Description">
   <main>
     <div class="container">
       <h1 class="page-head">{t("about.h1")}</h1>

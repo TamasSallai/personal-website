@@ -15,7 +15,7 @@ export const ui = {
       "Are you looking for a new team member for your company's development team? Need an expert to realize your web vision? You're in the right place!",
     "home.cta": "Introduction 🤝",
     // About
-    "about.title": "Tamas Sallai - About Me",
+    "about.title": "About Me - Tamas Sallai",
     "about.h1": "About Me",
     "about.h2": "Technologies",
     "about.p1":
@@ -30,8 +30,10 @@ export const ui = {
     "about.p6":
       "I am familiar with various frameworks and technologies, which you can read about below. If you don't find what you're looking for, don't worry. Just send a message and let me know what you need.",
     // Projects
+    "projects.title": "Projects - Tamas Sallai",
     "projects.p1": "Soon...",
     // Contact
+    "contact.title": "Contact - Tamas Sallai",
     "contact.p1":
       "Do you have a project idea you want to bring to life? Looking to hire? Feel free to reach out!",
     // Contact Form
@@ -70,7 +72,7 @@ export const ui = {
       "A céged fejlesztő csapatához keresel újabb csapattársat? Esetleg szakértőre van szükséged a webes elképzelésed megvalósításához? Jó helyen jársz!",
     "home.cta": "Bemutatkozás 🤝",
     // About Me
-    "about.title": "Sallai Tamás - Bemutatkozás",
+    "about.title": "Bemutatkozás - Sallai Tamás",
     "about.h1": "Bemutatkozás",
     "about.h2": "Technológiák",
     "about.p1":
@@ -85,8 +87,10 @@ export const ui = {
     "about.p6":
       "Számos keretrendszert és technológiát ismerek, amelyekről lentebb olvashatsz. Ha mégsem találod azt, amit keresel akkor se csüggedj. Írj egy üzenetet és mond el mire van szükséged.",
     // Projects
+    "projects.title": "Projektek - Sallai Tamás",
     "projects.p1": "Hamarosan...",
     // Contact
+    "contact.title": "Kapcsolat - Sallai Tamás",
     "contact.p1":
       "Van egy projekt ölted amit megvalósítanál? Szeretnél alkalmazni? Írj bátran!",
     // Contact Form
