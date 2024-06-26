@@ -1,0 +1,12 @@
+.page-head {
+  padding: 1.4rem 0;
+  font-size: 2.25rem;
+  border-bottom: 1px solid var(--clr-text);
+}
+
+@media screen and (max-width: 640px) {
+  .page-head {
+    padding: 1.2rem 0;
+    font-size: 1.75rem;
+  }
+}
